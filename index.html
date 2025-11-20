@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portifólio | Luiz Leopoldo</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="foto_minha-removebg-preview.png" alt="foto de Luiz Leopoldo " class="foto-perfil">
+        <h1>Luiz Leopoldo</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor de Software</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou um profissional em transição de carreira, procurando oportunidade na área de
+                desenvolvimento de software.</p>
+
+            <p class="sobre-paragrafo">Apaixonado por tecnologia, sou reconhecido pela organização exemplar e pela
+                constante disposição em colaborar com colegas e equipes. Atuo com atenção aos detalhes e dedicação
+                genuína ao bem-estar coletivo, demonstrando generosidade e integridade em todas as relações. Possuo
+                caráter íntegro e empático, sendo referência de confiança e apoio tanto no ambiente de trabalho quanto
+                ao meu círculo pessoal. Prezo pelo cuidado com a família, cultivo amizades sólidas e estou sempre
+                disponível para ajudar, independentemente do momento.</p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+               <a href="https://luizleopoldo.github.io/site-de-cafeteria/" target="_blank"><img src="imgem portifolio cafeteria.png" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Site de Cafeteria</h3>
+                    <p class="paragrafo-projetos">Site de demostração de uma cafeteria com informações de funcionameto,
+                        contatos e localização. feito com linguagens HTML E CSS.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+               <a href="https://luizleopoldo.github.io/Imobili-ria-Santos/" target="_blank"><img src="imagem potifolio imobiliaria.png" alt="projeto 2" class="projetos-imagem"></a>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Site de Imobiliária</h3>
+                    <p class="paragrafo-projetos">Site de uma Imobiliária com informações sobre serviços, corretores,
+                        contatos e localização. tudo feito com linguagens HTML E CSS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+               <a href="https://luizleopoldo.github.io/Site-de-PetShop/" target="_blank"><img src="imagem portifolio petshop.png" alt="projeto 3" class="projetos-imagem"></a>
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Site de PetShop</h3>
+                    <p class="paragrafo-projetos">Site de PetShop com informações sobre serviços,contatos, localização e
+                        botões para redes sociais. feito com linguagens HTML E CSS.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="Nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="Mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarwhats(event) {
+            event.preventDefault()
+            const nome = document.getElementById('nome');
+            const mensagem = document.getElementById('mensagem');
+            const telefone = '5521976670041'
+
+            const texto = `Olá, Me Chamo Luiz Leopoldo, Desenvolvedor de Software e logo irei atendê-lo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${5521976670041}?text=${msgFormatada}`
+
+            console.log(url)
+
+            window.open(url, '_blank')
+        }
+    </script>
+
+</body>
+
+</html>
